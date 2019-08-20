@@ -1,0 +1,5 @@
+<h2>Menu Categories</h2>
+<div ng-repeat="category in ctrl.categories">
+  <a ui-sref="items({shortName:category.short_name})">({{category.short_name}}) {{category.name}}</a>
+</div>
+
