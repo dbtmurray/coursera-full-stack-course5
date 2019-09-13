@@ -15,7 +15,6 @@
       service.email = ctrl.email;
       service.favourite = ctrl.favourite;
       service.signedup = true;
-      console.log("Updated user");
     };
   };
 })();
