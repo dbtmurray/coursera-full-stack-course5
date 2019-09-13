@@ -1,0 +1,20 @@
+<h1>My Info</h1>
+<div ng-controller="InfoController as info">
+  <div ng-show="!info.signedup">
+    Not signed up yet.
+    <a ui-sref="public.signup">Sign up now!</a>
+  </div>
+
+  <div ng-show="info.signedup">
+    First name: {{info.firstname}} <br>
+    Last name: {{info.lastname}} <br>
+    Phone: {{info.phone}} <br>
+    Email: {{info.email}} <br>
+    Favourite dish: ({{info.dishShortname}}) {{info.dishName}}</br>
+    <img src="{{info.dishImageUrl}}"
+         alt="{{info.dishName}}"
+         width="250"
+         height="150"></img>
+    <div class="description">{{info.description}}</div>
+  </div>
+</div>

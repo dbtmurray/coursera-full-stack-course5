@@ -1,0 +1,37 @@
+<h1>Signup Form</h1>
+<div ng-controller="SignupController as signup">
+  <form name="signupForm" novalidate>
+  <div>First name
+    <input type="text"
+           name="firstname" required
+           ng-model="signup.firstname"
+           placeholder="First name here"
+           ng-minlength="3">
+  </div>
+  <div>Last name
+    <input type="text"
+           name="lastname" required
+           ng-model="signup.lastname"
+           placeholder="Last name here"
+           ng-minlength="3">
+  </div>
+  <div>Phone
+    <input type="phone" name="phone" required
+                        ng-model="signup.phone"
+                        pattern="[0-9\-\*#\(\)]+">
+  </div>
+  <div>Email
+    <input type="email" name="email" required
+                        ng-model="signup.email">
+  </div>
+  <div>Favourite dish
+    <input type="text" name="favourite" required
+                       ng-maxlength="16"
+                       ng-model="signup.favourite">
+    <span ng-show="signup.invalid">No such menu number exists</span>
+  </div>
+  <button ng-disabled="signupForm.$invalid"
+          ng-click="signup.submit(signupForm)">Submit</button>
+  </form>
+  <div ng-show="signup.saved">Your information has been saved</div>
+</div>
